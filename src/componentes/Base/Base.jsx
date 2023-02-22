@@ -3,8 +3,15 @@ import classes from './Base.module.css';
 
 const Base = () => {
   return (
-    <div className={classes.Container}>
-      <h1>en componente base</h1>
+    <div className={classes.ContainerPage}>
+      <div className={classes.ContainerBase}>
+        <div className={classes.TituloCiudad}>
+        <h2>Nombre de Ciudad</h2>
+        </div>
+        <div className={classes.GrupoPrincipal}></div>
+        <div className={classes.GrupoPrincipal}></div>
+        <div className={classes.GrupoPrincipal}></div>
+    </div>
     </div>
   );
 }

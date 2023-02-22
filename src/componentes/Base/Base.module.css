@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.ContainerPage {
+  background-color: #9acd32;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerBase {
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 24%);
+  padding: 16px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.GrupoPrincipal {
+  background-color: green;
+}
