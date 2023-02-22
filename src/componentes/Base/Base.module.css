@@ -27,6 +27,54 @@
   align-items: flex-start;
 }
 
-.GrupoPrincipal {
+.Header {
   background-color: green;
+}
+
+.TituloCiudad {
+  background-color: lightgreen;
+}
+
+.TimeStamp {
+  background-color: darkgreen;
+}
+
+.GrupoPrincipal {
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+}
+
+.Caritas {
+  background-color: lightblue;
+}
+
+.Aqi {
+  background-color: slateblue;
+}
+
+.Referencia {
+  background-color: darkblue;
+}
+
+.GrupoSecundario {
+  background-color: maroon;
+  display: flex;
+  flex-direction: row;
+}
+
+.Temperatura {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+}
+.Humedad {
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+}
+.Viento {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
 }
