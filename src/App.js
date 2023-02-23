@@ -31,10 +31,10 @@ function App() {
           city: e.city,
           timestamp: e.current.pollution.ts,
           aqi: e.current.pollution.aqius,
-          temperature: e.weather.tp,
-          icon: e.weather.ic,
-          humidity: e.weather.hu,
-          wind: e.weather.ws,
+          temperature: e.current.weather.tp,
+          icon: e.current.weather.ic,
+          humidity: e.current.weather.hu,
+          wind: e.current.weather.ws,
         };
       });
       return apiCityData;
