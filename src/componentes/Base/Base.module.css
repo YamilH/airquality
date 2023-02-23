@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.ContainerPage {
+  background-color: #9acd32;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContainerBase {
+  width: 90vw;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 24%);
+  padding: 10px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.Header {
+  background-color: green;
+  height: 70px;
+  width: 100%;
+  padding: 4px;
+}
+
+.TituloCiudad {
+  background-color: lightgreen;
+}
+
+.TimeStamp {
+  background-color: darkgreen;
+}
+
+.GrupoPrincipal {
+  background-color: blue;
+  height: 100px;
+  width: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Caritas {
+  background-color: lightblue;
+}
+
+.Aqi {
+  background-color: slateblue;
+  flex-basis: 100px;
+}
+
+.Referencia {
+  background-color: darkblue;
+}
+
+.GrupoSecundario {
+  background-color: maroon;
+  height: 70px;
+  width: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.Temperatura {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+}
+.Humedad {
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+}
+.Viento {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+}
+
+
+@media (min-width: 400px) {
+
+  .ContainerBase {
+    width: 400px;
+  }
+}
