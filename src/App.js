@@ -8,6 +8,7 @@ import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
 
+require("dotenv").config();
 const { API_URL, API_KEY } = process.env;
 
 function App() {
