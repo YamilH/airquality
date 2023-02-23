@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Loader from "./componentes/Loader/Loader.jsx";
 import Base from "./componentes/Base/Base.jsx";
 
@@ -8,8 +7,7 @@ import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
 
-require("dotenv").config();
-const { API_URL, API_KEY } = process.env;
+import axios from "axios";
 
 function App() {
 	const [loading, setLoading] = useState(false);
@@ -43,7 +41,7 @@ function App() {
 
 	const getCityData = () => {
 		try {
-			const apiUrl = axios.get(`${API_URL}/v2/nearest_city?key=${API_KEY}`);
+			const apiUrl = axios.get(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`);
 			apiUrl
 				.then((response) => response.json())
 				.then((data) => {
