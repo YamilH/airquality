@@ -68,7 +68,7 @@ function App() {
       ) : (
 
         <Base 
-          titulociudad={'Mendoza'}
+          titulociudad={baseState.city}
           timestamp={'1967 10-00-00'}
           iconocaritas={iconocaritas}
           aqi={'24'}
