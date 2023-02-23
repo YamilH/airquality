@@ -59,6 +59,7 @@
 
 .Aqi {
   background-color: slateblue;
+  flex-basis: 100px;
 }
 
 .Referencia {
