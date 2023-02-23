@@ -1,35 +1,36 @@
 import React from 'react';
 import classes from './Base.module.css';
 
-const Base = () => {
+const Base = (props) => {
   return (
     <div className={classes.ContainerPage}>
       <div className={classes.ContainerBase}>
         <div className={classes.Header}>
           <div className={classes.TituloCiudad}>
-            <h2>Nombre de Ciudad</h2>
+            <h2>{props.titulociudad}</h2>
           </div>
         <div className={classes.TimeStamp}>
-             <h4>TimeStamp</h4>
+             <h4>{props.timestamp}</h4>
         </div>
         </div>
         <div className={classes.GrupoPrincipal}>
-          <div className={classes.Caritas}> <h4>CARITA</h4></div>
-          <div className={classes.Aqi}> <h4>57</h4></div>
-         <div className={classes.Referencia}> <h4>Moderada</h4></div>
+          <div className={classes.Caritas}> <h4>{props.carita}</h4></div>
+          <img className={classes.IconoCaritas} src={props.iconocaritas} alt={props.altcaritas}></img>
+          <div className={classes.Aqi}> <h4>{props.aqi}</h4></div>
+         <div className={classes.Referencia}> <h4>{props.referencia}</h4></div>
         </div>
         <div className={classes.GrupoSecundario}>
           <div className={classes.Temperatura}>
-            <div className={classes.IconoTemperatura}>png</div>
-            <div className={classes.ValorTemperatura}>27°</div>
+            <img className={classes.IconoTemperatura} src={props.iconotemperatura} alt={props.alttemperatura}></img>
+            <div className={classes.ValorTemperatura}>{props.valortemperatura}</div>
             </div>
           <div className={classes.Humedad}>
-            <div className={classes.IconoHumedad}>png</div>
-            <div className={classes.ValorHumedad}>55%</div>
+            <img className={classes.IconoHumedad} src={props.iconohumedad} alt={props.althumedad}></img>
+            <div className={classes.ValorHumedad}>{props.valorhumedad}</div>
           </div>
          <div className={classes.Viento}>
-           <div className={classes.IconoViento}>png</div>
-            <div className={classes.ValorViento}>3.2km/h</div>
+           <img className={classes.IconoViento} src={props.iconoviento} alt={props.altviento}></img>
+            <div className={classes.ValorViento}>{props.valorviento}</div>
          </div>
         </div>
 

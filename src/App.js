@@ -2,6 +2,12 @@ import React, {useState, useEffect} from 'react';
 import Loader from './componentes/Loader/Loader.jsx'
 import Base from './componentes/Base/Base.jsx'
 
+import iconocaritas from './media/ic-face-green.svg'
+import iconotemperatura from './media/humedad.svg';
+import iconohumedad from './media/humedad.svg';
+import iconoviento from './media/viento.svg';
+
+
 function App() {
 
   const [loading, setLoading] = useState(false);
@@ -51,7 +57,20 @@ function App() {
         <Loader />
       ) : (
 
-        <Base />
+        <Base 
+          titulociudad={'Mendoza'}
+          timestamp={'1967 10-00-00'}
+          iconocaritas={iconocaritas}
+          aqi={'24°'}
+          referencia={'Buena como Juli'} 
+          iconotemperatura={iconotemperatura} 
+          valortemperatura={'23°'} 
+          iconohumedad={iconohumedad} 
+          valorhumedad={'23%'} 
+          iconoviento={iconoviento} 
+          valorviento={'10km/h'} 
+        
+        />
       )}
     </div>
   );
