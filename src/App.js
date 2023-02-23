@@ -42,22 +42,22 @@ function App() {
   // .catch(error => console.log('error', error));
   // }
 
-  const getCityData = async (city, state, country) => {
+  const getCityData = () =>{
     try {
-      const apiUrl = await axios.get(
-        `${API_URL}/v2/city?city=${city}&state=${state}&country=${country}&key=${API_KEY}`
+      const apiUrl = axios.get(
+        `${API_URL}/v2/nearest_city?key=${API_KEY}`
       );
-      const apiCityData = await apiUrl.data?.map((e) => {
-        return {
-          city: e.city,
-          timestamp: e.current.pollution.ts,
-          aqi: e.current.pollution.aqius,
-          temperature: e.current.weather.tp,
-          humidity: e.current.weather.hu,
-          wind: e.current.weather.ws,
-        };
-      });
-      return apiCityData;
+        apiUrl.then((response) => response.json())
+              .then(data =>{
+                setBaseState({
+                  city: data.city,
+                  timestamp: data.current.pollution.ts,
+                  aqi: data.current.pollution.aqius,
+                  temperature: data.current.weather.tp,
+                  humidity: data.current.weather.hu,
+                  wind: data.current.weather.ws,
+                })
+              })
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +72,7 @@ function App() {
       ) : (
 
         <Base
-          titulociudad={'Mendoza'}
+          titulociudad={baseState.city}
           timestamp={'1967 10-00-00'}
           iconocaritas={iconocaritas}
           aqi={'24°'}
