@@ -19,9 +19,10 @@ const Base = () => {
          <div className={classes.Referencia}> <h4>Moderada</h4></div>
         </div>
         <div className={classes.GrupoSecundario}>
-          <div className={classes.Temperatura}></div>
+          <div className={classes.Temperatura}>
             <div className={classes.IconoTemperatura}>png</div>
             <div className={classes.ValorTemperatura}>27°</div>
+            </div>
           <div className={classes.Humedad}>
             <div className={classes.IconoHumedad}>png</div>
             <div className={classes.ValorHumedad}>55%</div>
