@@ -56,6 +56,9 @@
 .Caritas {
   background-color: lightblue;
 }
+.IconoCaritas {
+  height: 70px;
+}
 
 .Aqi {
   background-color: slateblue;
@@ -82,16 +85,28 @@
   display: flex;
   flex-direction: row;
 }
+.IconoTemperatura {
+  height: 40px;
+}
+
 .Humedad {
   background-color: orange;
   display: flex;
   flex-direction: row;
 }
+.IconoHumedad {
+  height: 40px;
+}
+
 .Viento {
   background-color: yellow;
   display: flex;
   flex-direction: row;
 }
+.IconoViento {
+  height: 40px;
+}
+
 
 
 @media (min-width: 400px) {
