@@ -59,27 +59,31 @@ function App() {
 		}
 	};
 
-	return (
-		<div className="App">
-			{loading ? (
-				<Loader />
-			) : (
-				<Base
-					titulociudad={baseState.city}
-					timestamp={"1967 10-00-00"}
-					iconocaritas={iconocaritas}
-					aqi={"24°"}
-					referencia={"Buena como Juli"}
-					iconotemperatura={iconotemperatura}
-					valortemperatura={"23°"}
-					iconohumedad={iconohumedad}
-					valorhumedad={"23%"}
-					iconoviento={iconoviento}
-					valorviento={"10km/h"}
-				/>
-			)}
-		</div>
-	);
-}
+  return (
+    <div className="App">
+              {
+        loading ? (
+
+        <Loader />
+      ) : (
+
+        <Base 
+          titulociudad={'Mendoza'}
+          timestamp={'1967 10-00-00'}
+          iconocaritas={iconocaritas}
+          aqi={'24'}
+          referencia={'Buena'} 
+          iconotemperatura={iconotemperatura} 
+          valortemperatura={'23°'} 
+          iconohumedad={iconohumedad} 
+          valorhumedad={'23%'} 
+          iconoviento={iconoviento} 
+          valorviento={'10km/h'} 
+        
+        />
+      )}
+    </div>
+  )
+};
 
 export default App;
