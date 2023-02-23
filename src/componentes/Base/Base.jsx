@@ -10,14 +10,15 @@ const Base = (props) => {
             <h2>{props.titulociudad}</h2>
           </div>
         <div className={classes.TimeStamp}>
-             <h4>{props.timestamp}</h4>
+             <h3>{props.timestamp}</h3>
         </div>
         </div>
         <div className={classes.GrupoPrincipal}>
-          <div className={classes.Caritas}> <h4>{props.carita}</h4></div>
+          <div className={classes.IconoCaritasContainer}>
           <img className={classes.IconoCaritas} src={props.iconocaritas} alt={props.altcaritas}></img>
-          <div className={classes.Aqi}> <h4>{props.aqi}</h4></div>
-         <div className={classes.Referencia}> <h4>{props.referencia}</h4></div>
+          </div>
+          <div className={classes.Aqi}> <h3 className={classes.ValorAqi}>{props.aqi}</h3><h5>US AQI</h5></div>
+         <div className={classes.Referencia}> <h3>{props.referencia}</h3></div>
         </div>
         <div className={classes.GrupoSecundario}>
           <div className={classes.Temperatura}>

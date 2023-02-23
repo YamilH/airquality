@@ -61,8 +61,8 @@ function App() {
           titulociudad={'Mendoza'}
           timestamp={'1967 10-00-00'}
           iconocaritas={iconocaritas}
-          aqi={'24°'}
-          referencia={'Buena como Juli'} 
+          aqi={'24'}
+          referencia={'Buena'} 
           iconotemperatura={iconotemperatura} 
           valortemperatura={'23°'} 
           iconohumedad={iconohumedad} 
