@@ -19,7 +19,7 @@ function App() {
   .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
-  }
+  };
 
   return (
     <div className="App">
