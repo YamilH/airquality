@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import Loader from './componentes/Loader/Loader.jsx'
-import Base from './componentes/Base/Base.jsx'
-import Search from './componentes/Search/Search.jsx'
-import Footer from './componentes/Footer/Footer.jsx'
+import Loader from './componentes/Loader/Loader.jsx';
+import Base from './componentes/Base/Base.jsx';
+import Search from './componentes/Search/Search.jsx';
+import Footer from './componentes/Footer/Footer.jsx';
 
 import iconocaritas from "./media/ic-face-green.svg";
 import iconotemperatura from "./media/humedad.svg";
