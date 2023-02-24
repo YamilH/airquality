@@ -43,8 +43,8 @@ function App() {
 		try {
 			const apiUrl = axios.get(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`);
 			apiUrl
-				.then((response) => response.json())
-				.then((data) => {
+				.then(response => response.json())
+				.then(data => {
 					setBaseState({
 						city: data.city,
 						timestamp: data.current.pollution.ts,
@@ -54,8 +54,9 @@ function App() {
 						wind: data.current.weather.ws,
 					});
 				});
-		} catch (error) {
-			console.log(error);
+        // .catch(error => console.log(error));
+    } catch(error) {
+			  console.log(error);
 		}
 	};
 
