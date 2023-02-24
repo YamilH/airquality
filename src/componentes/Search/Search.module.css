@@ -1,0 +1,21 @@
+.Container {
+  background-color: transparent;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  margin-top: 25px;
+}
+
+.BuscadorContainer {
+
+}
+
+.Buscador {
+height: 30px;
+
+}
