@@ -64,7 +64,7 @@ function App() {
           aqi={'24'}
           referencia={'Buena'} 
           iconotemperatura={iconotemperatura} 
-          valortemperatura={'23°'} 
+          valortemperatura={'23°C'} 
           iconohumedad={iconohumedad} 
           valorhumedad={'23%'} 
           iconoviento={iconoviento} 
