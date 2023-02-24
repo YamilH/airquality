@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
 .Container {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: #f8f6f0;
 }
 
 .Loader{
@@ -12,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  font-family: 'Bebas Neue', cursive;
   position: relative;
   font-size: 48px;
   letter-spacing: 6px;
@@ -26,15 +31,15 @@
   content: "";
   width: 20px;
   height: 20px;
-  background-color: #ff3d00;
+  background-color: #5da960;
   background-image: radial-gradient(circle 2px, #fff4 100%, transparent 0),
     radial-gradient(circle 1px, #fff3 100%, transparent 0);
   background-position: 14px -4px, 12px -1px;
   border-radius: 50%;
   position: absolute;
   margin: auto;
-  top: 4px;
-  right: 161px;
+  top: -10px;
+  right: 51px;
   transform-origin: center bottom;
   animation: fillBaloon 1s ease-in-out infinite alternate;
 }
@@ -42,4 +47,18 @@
 @keyframes fillBaloon {
   0% { transform: scale(1)}
   100% { transform: scale(3)}
+}
+
+
+.Frase{
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  position: relative;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./componentes/Loader/Loader.jsx";
 import Base from "./componentes/Base/Base.jsx";
-import Search from "./componentes/Search/Search.jsx";
 import Footer from "./componentes/Footer/Footer.jsx";
 
-import iconocaritas from "./media/ic-face-green.svg";
+import iconocaritas from "./media/carabueno.svg";
 import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
@@ -77,7 +76,7 @@ function App() {
 				<Loader />
 			) : (
 				<>
-					<Search />
+
 
 					<Base
 						titulociudad={baseState.city}
