@@ -76,8 +76,7 @@ function App() {
 				<Loader />
 			) : (
 				<>
-
-
+				
 					<Base
 						titulociudad={baseState.city}
 						timestamp={baseState.timestamp}

@@ -5,8 +5,8 @@ const Loader = () => {
   return (
     <div className={classes.Container}>
     <span className={classes.Loader}>Respira</span>
-    <span className={classes.Frase}>"¡la calidad del aire,</span>
-    <span className={classes.Frase}>en el lugar donde estés!"</span>
+    <span className={classes.Frase}>"La calidad del aire</span>
+    <span className={classes.Frase}>en el lugar que estés"</span>
     </div>
   );
 }
