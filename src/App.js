@@ -4,53 +4,68 @@ import Base from './componentes/Base/Base.jsx'
 import Search from './componentes/Search/Search.jsx'
 import Footer from './componentes/Footer/Footer.jsx'
 
-import iconocaritas from './media/ic-face-green.svg'
-import iconotemperatura from './media/humedad.svg';
-import iconohumedad from './media/humedad.svg';
-import iconoviento from './media/viento.svg';
-
+import iconocaritas from "./media/ic-face-green.svg";
+import iconotemperatura from "./media/humedad.svg";
+import iconohumedad from "./media/humedad.svg";
+import iconoviento from "./media/viento.svg";
 
 function App() {
+	const [loading, setLoading] = useState(false);
 
-  const [loading, setLoading] = useState(false);
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 6000);
+	}, []);
 
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false)
-    }, 6000);
-  
+	const [baseState, setBaseState] = useState({
+		city: "",
+		timestamp: "",
+		aqi: "",
+		temperature: "",
+		humidity: "",
+		wind: "",
+	});
+
+  useEffect(()=>{
+    getCityData();
   }, []);
 
-  // function fetchCityData(city, state, country){
-  //   fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=4e099eb4-585d-4aef-8d67-417d1b9de753`)
-  // .then((response) => response.json())
-  // .then(result => console.log(result))
-  // .catch(error => console.log('error', error));
-  // }
+	// function fetchCityData(city, state, country){
+	//   fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=4e099eb4-585d-4aef-8d67-417d1b9de753`)
+	// .then((response) => response.json())
+	// .then(result => console.log(result))
+	// .catch(error => console.log('error', error));
+	// }
 
-  const getCityData = async (city, state, country) => {
-    try {
-      const apiUrl = await fetch(
-        `http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=4e099eb4-585d-4aef-8d67-417d1b9de753`
-      );
-      const apiCityData = await apiUrl.data?.map((e) => {
-        return {
-          city: e.city,
-          timestamp: e.current.pollution.ts,
-          aqi: e.current.pollution.aqius,
-          temperature: e.weather.tp,
-          icon: e.weather.ic,
-          humidity: e.weather.hu,
-          wind: e.weather.ws,
-        };
-      });
-      return apiCityData;
-    } catch (error) {
-      console.log(error);
-    }
- };
-  
+	const getCityData = () => {
+		try {
+			fetch(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`)
+				.then((response) => response.json())
+				.then(function ({ data }){
+					// console.log("data", data);
+
+					// const timestamp = parseISO(data.current.pollution.ts);
+					// const formattedTimestamp = format(timestamp, "PPpp");
+
+					setBaseState({
+						city: data.city,
+						timestamp: data.current.pollution.ts,
+						aqi: data.current.pollution.aqius,
+						temperature: data.current.weather.tp,
+						humidity: data.current.weather.hu,
+						wind: data.current.weather.ws,
+					});
+				});
+        // .catch(function (error) {
+				// 	console.log(error)
+				// });
+    } catch(error) {
+		  console.log(error);
+		}
+	};
+
   return (
     <div className="App">
               {
@@ -62,17 +77,17 @@ function App() {
         <Search />
 
         <Base 
-          titulociudad={'Mendoza'}
-          timestamp={'1967 10-00-00'}
+          titulociudad={baseState.city}
+          timestamp={baseState.timestamp}
           iconocaritas={iconocaritas}
-          aqi={'24'}
+          aqi={baseState.aqi}
           referencia={'Buena'} 
           iconotemperatura={iconotemperatura} 
-          valortemperatura={'23°C'} 
+          valortemperatura={baseState.temperature} 
           iconohumedad={iconohumedad} 
-          valorhumedad={'23%'} 
+          valorhumedad={baseState.humidity} 
           iconoviento={iconoviento} 
-          valorviento={'10km/h'} 
+          valorviento={baseState.wind} 
         
         />
 
@@ -80,7 +95,7 @@ function App() {
        </>
       )}
     </div>
-  );
-}
+  )
+};
 
 export default App;
