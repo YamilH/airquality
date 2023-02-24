@@ -32,30 +32,22 @@ function App() {
     getCityData();
   }, []);
 
-	// function fetchCityData(city, state, country){
-	//   fetch(`http://api.airvisual.com/v2/city?city=${city}&state=${state}&country=${country}&key=4e099eb4-585d-4aef-8d67-417d1b9de753`)
-	// .then((response) => response.json())
-	// .then(result => console.log(result))
-	// .catch(error => console.log('error', error));
-	// }
-
 	const getCityData = () => {
 		try {
 			fetch(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`)
 				.then((response) => response.json())
 				.then(function ({ data }){
-					// console.log("data", data);
 
 					// const timestamp = parseISO(data.current.pollution.ts);
-					// const formattedTimestamp = format(timestamp, "PPpp");
+					// const formattedTimestamp = format(timestamp);
 
 					setBaseState({
 						city: data.city,
 						timestamp: data.current.pollution.ts,
 						aqi: data.current.pollution.aqius,
-						temperature: data.current.weather.tp,
-						humidity: data.current.weather.hu,
-						wind: data.current.weather.ws,
+						temperature: data.current.weather.tp + ' °C',
+						humidity: data.current.weather.hu + ' %',
+						wind: data.current.weather.ws + ' km/h',
 					});
 				});
         // .catch(function (error) {
@@ -84,7 +76,7 @@ function App() {
           referencia={'Buena'} 
           iconotemperatura={iconotemperatura} 
           valortemperatura={baseState.temperature} 
-          iconohumedad={iconohumedad} 
+          iconohumedad={iconohumedad}
           valorhumedad={baseState.humidity} 
           iconoviento={iconoviento} 
           valorviento={baseState.wind} 
