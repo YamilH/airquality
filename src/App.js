@@ -32,27 +32,36 @@ function App() {
     getCityData();
   }, []);
 
+	function getTimeStamp() {
+    var now = new Date();
+    return ((now.getMonth() + 1) + '/' +
+            (now.getDate()) + '/' +
+             now.getFullYear() + " " +
+             now.getHours() + ':' +
+             ((now.getMinutes() < 10)
+                 ? ("0" + now.getMinutes())
+                 : (now.getMinutes())) + ':' +
+             ((now.getSeconds() < 10)
+                 ? ("0" + now.getSeconds())
+                 : (now.getSeconds())));
+}
+
 	const getCityData = () => {
 		try {
 			fetch(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`)
 				.then((response) => response.json())
 				.then(function ({ data }){
 
-					// const timestamp = parseISO(data.current.pollution.ts);
-					// const formattedTimestamp = format(timestamp);
-
 					setBaseState({
 						city: data.city,
-						timestamp: data.current.pollution.ts,
+						timestamp: getTimeStamp(),
 						aqi: data.current.pollution.aqius,
 						temperature: data.current.weather.tp + ' °C',
 						humidity: data.current.weather.hu + ' %',
 						wind: data.current.weather.ws + ' km/h',
 					});
 				});
-        // .catch(function (error) {
-				// 	console.log(error)
-				// });
+
     } catch(error) {
 		  console.log(error);
 		}
