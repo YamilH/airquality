@@ -7,8 +7,6 @@ import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
 
-import axios from "axios";
-
 function App() {
 	const [loading, setLoading] = useState(false);
 
@@ -41,10 +39,14 @@ function App() {
 
 	const getCityData = () => {
 		try {
-			const apiUrl = axios.get(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`);
-			apiUrl
-				.then(response => response.json())
-				.then(data => {
+			fetch(`${process.env.REACT_APP_API_URL}/v2/nearest_city?key=${process.env.REACT_APP_API_KEY}`)
+				.then((response) => response.json())
+				.then(function ({ data }){
+					// console.log("data", data);
+
+					// const timestamp = parseISO(data.current.pollution.ts);
+					// const formattedTimestamp = format(timestamp, "PPpp");
+
 					setBaseState({
 						city: data.city,
 						timestamp: data.current.pollution.ts,
@@ -54,9 +56,11 @@ function App() {
 						wind: data.current.weather.ws,
 					});
 				});
-        // .catch(error => console.log(error));
+        // .catch(function (error) {
+				// 	console.log(error)
+				// });
     } catch(error) {
-			  console.log(error);
+		  console.log(error);
 		}
 	};
 
@@ -70,16 +74,16 @@ function App() {
 
         <Base 
           titulociudad={baseState.city}
-          timestamp={'1967 10-00-00'}
+          timestamp={baseState.timestamp}
           iconocaritas={iconocaritas}
-          aqi={'24'}
+          aqi={baseState.aqi}
           referencia={'Buena'} 
           iconotemperatura={iconotemperatura} 
-          valortemperatura={'23°C'} 
+          valortemperatura={baseState.temperature} 
           iconohumedad={iconohumedad} 
-          valorhumedad={'23%'} 
+          valorhumedad={baseState.humidity} 
           iconoviento={iconoviento} 
-          valorviento={'10km/h'} 
+          valorviento={baseState.wind} 
         
         />
       )}
