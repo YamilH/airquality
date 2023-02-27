@@ -32,7 +32,7 @@ function App() {
 		getCityData();
 	}, []);
 
-	function getTimeStamp() {
+	const getTimeStamp = () => {
 		var now = new Date();
 		return (
 			now.getMonth() +
@@ -78,7 +78,6 @@ function App() {
 				<Loader />
 			) : (
 				<>
-				
 					<Base
 						titulociudad={baseState.city}
 						timestamp={baseState.timestamp}
