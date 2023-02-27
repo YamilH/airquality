@@ -25,6 +25,7 @@ function App() {
 		temperature: "",
 		humidity: "",
 		wind: "",
+		icon: "",
 	});
 
 	useEffect(() => {
@@ -63,6 +64,7 @@ function App() {
 						temperature: data.current.weather.tp + " °C",
 						humidity: data.current.weather.hu + " %",
 						wind: data.current.weather.ws + " km/h",
+						icon: data.current.weather.ic,
 					});
 				});
 		} catch (error) {
@@ -83,7 +85,7 @@ function App() {
 						iconocaritas={iconocaritas}
 						aqi={baseState.aqi}
 						referencia={"Buena"}
-						iconotemperatura={iconotemperatura}
+						iconotemperatura={baseState.icon}
 						valortemperatura={baseState.temperature}
 						iconohumedad={iconohumedad}
 						valorhumedad={baseState.humidity}
