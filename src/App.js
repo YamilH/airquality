@@ -4,7 +4,7 @@ import Base from "./componentes/Base/Base.jsx";
 import Footer from "./componentes/Footer/Footer.jsx";
 
 import iconocaritas from "./media/carabueno.svg";
-import iconotemperatura from "./media/humedad.svg";
+// import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
 
@@ -71,7 +71,6 @@ function App() {
 			console.log(error);
 		}
 	};
-
 	return (
 		<div className="App">
 			{loading ? (
@@ -83,7 +82,7 @@ function App() {
 						timestamp={baseState.timestamp}
 						iconocaritas={iconocaritas}
 						aqi={baseState.aqi}
-						referencia={"Buena"}
+						referencia={"Bueno"}
 						iconotemperatura={process.env.PUBLIC_URL+`${baseState.iconotemperatura}.png`}
 						valortemperatura={baseState.temperature}
 						iconohumedad={iconohumedad}
