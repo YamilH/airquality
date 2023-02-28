@@ -3,7 +3,7 @@ import Loader from "./componentes/Loader/Loader.jsx";
 import Base from "./componentes/Base/Base.jsx";
 import Footer from "./componentes/Footer/Footer.jsx";
 
-import iconocaritas from "./media/carabueno.svg";
+// import iconocaritas from "./media/carabueno.svg";
 // import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
@@ -71,6 +71,30 @@ function App() {
 			console.log(error);
 		}
 	};
+
+let iconocaritas;
+let referencia;
+
+if (baseState.aqi >= 1 && baseState.aqi <= 50) {
+  iconocaritas = "carabueno.svg";
+  referencia = "Bueno";
+} else if (baseState.aqi >= 51 && baseState.aqi <= 100) {
+  iconocaritas = "caramoderado.svg";
+  referencia = "Moderado";
+} else if (baseState.aqi >= 101 && baseState.aqi <= 150) {
+  iconocaritas = "carainsalubreparagrupossensibles.svg";
+  referencia = "Insalubre para grupos sensibles";
+} else if (baseState.aqi >= 151 && baseState.aqi <= 200) {
+  iconocaritas = "carainsalubre.svg";
+  referencia = "Insalubre";
+} else if (baseState.aqi >= 201 && baseState.aqi <= 300) {
+  iconocaritas = "caramuyinsalubre.svg";
+  referencia = "Muy Insalubre";
+} else {
+  iconocaritas = "carapeligroso.svg";
+  referencia = "Peligroso";
+}
+
 	return (
 		<div className="App">
 			{loading ? (
@@ -82,7 +106,7 @@ function App() {
 						timestamp={baseState.timestamp}
 						iconocaritas={iconocaritas}
 						aqi={baseState.aqi}
-						referencia={"Bueno"}
+						referencia={referencia}
 						iconotemperatura={process.env.PUBLIC_URL+`${baseState.iconotemperatura}.png`}
 						valortemperatura={baseState.temperature}
 						iconohumedad={iconohumedad}
