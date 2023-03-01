@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Loader from "./componentes/Loader/Loader.jsx";
 import Base from "./componentes/Base/Base.jsx";
 import Footer from "./componentes/Footer/Footer.jsx";
+import Leyenda from "./componentes/Leyenda/Leyenda.jsx";
 
 // import iconocaritas from "./media/carabueno.svg";
 // import iconotemperatura from "./media/humedad.svg";
@@ -101,6 +102,7 @@ if (baseState.aqi >= 1 && baseState.aqi <= 50) {
 				<Loader />
 			) : (
 				<>
+					<Leyenda />
 					<Base
 						titulociudad={baseState.city}
 						timestamp={baseState.timestamp}
