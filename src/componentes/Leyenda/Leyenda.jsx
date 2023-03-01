@@ -13,16 +13,12 @@ const Leyenda = () => {
   return (
     <div className={classes.Container}>
 
-      <div onClick={handleLey}>
+      <div onClick={handleLey} className={classes.Hamburger}>
       <img src={hamburger}></img>
       </div>
 
-      <div className={
-        ley ? (
-        classes.LeyendasIn
-        ) : ( 
-        classes.LeyendasOut
-        )}>
+      <div className={`${classes.Container} ${ley ? classes.LeyendasIn : classes.LeyendasOut}`}>
+      
       <div className={classes.Leyenda1}>
         <h3 className={classes.Title}>Bueno</h3>
         <h3 className={classes.Valor}>0-50</h3>
