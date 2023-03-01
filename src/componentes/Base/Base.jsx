@@ -1,9 +1,23 @@
 import React from 'react';
 import classes from './Base.module.css';
-// import media from './../../media'
 
 const Base = (baseState) => {
 
+let GrupoPrincipal;
+
+if (baseState.aqi >= 1 && baseState.aqi <= 50) {
+  GrupoPrincipal = classes.GrupoPrincipal1
+} else if (baseState.aqi >= 51 && baseState.aqi <= 100) {
+  GrupoPrincipal = classes.GrupoPrincipal2
+} else if (baseState.aqi >= 101 && baseState.aqi <= 150) {
+  GrupoPrincipal = classes.GrupoPrincipal3
+} else if (baseState.aqi >= 151 && baseState.aqi <= 200) {
+  GrupoPrincipal = classes.GrupoPrincipal4
+} else if (baseState.aqi >= 201 && baseState.aqi <= 300) {
+  GrupoPrincipal = classes.GrupoPrincipal5
+} else {
+  GrupoPrincipal = classes.GrupoPrincipal6
+}
 
   return (
 
@@ -37,7 +51,7 @@ const Base = (baseState) => {
              <h3 className={classes.TextoTimeStamp}>{baseState.timestamp}</h3>
         </div>
         </div>
-        <div className={classes.GrupoPrincipal}>
+        <div className={GrupoPrincipal}>
           <div className={classes.IconoCaritasContainer}>
           <img className={classes.IconoCaritas} src={baseState.iconocaritas} alt={baseState.altcaritas}></img>
           </div>
