@@ -1,9 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import classes from "./Leyenda.module.css";
+import hamburger from './../../media/hamburger.svg'
 
 const Leyenda = () => {
+
+  const [ley, setLey] = useState(false);
+
+  const handleLey = () => {
+    setLey(!ley);
+  };
+
   return (
     <div className={classes.Container}>
+
+      <div onClick={handleLey}>
+      <img src={hamburger}></img>
+      </div>
+
+      <div className={
+        ley ? (
+        classes.LeyendasIn
+        ) : ( 
+        classes.LeyendasOut
+        )}>
       <div className={classes.Leyenda1}>
         <h3 className={classes.Title}>Bueno</h3>
         <h3 className={classes.Valor}>0-50</h3>
@@ -32,6 +51,7 @@ const Leyenda = () => {
       <div className={classes.Leyenda6}>
         <h3 className={classes.Title}>Peligroso</h3>
         <h3 className={classes.Valor}>350+</h3>
+      </div>
       </div>
     </div>    
   );
