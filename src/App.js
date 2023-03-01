@@ -3,9 +3,6 @@ import Loader from "./componentes/Loader/Loader.jsx";
 import Base from "./componentes/Base/Base.jsx";
 import Footer from "./componentes/Footer/Footer.jsx";
 import Leyenda from "./componentes/Leyenda/Leyenda.jsx";
-
-// import iconocaritas from "./media/carabueno.svg";
-// import iconotemperatura from "./media/humedad.svg";
 import iconohumedad from "./media/humedad.svg";
 import iconoviento from "./media/viento.svg";
 
