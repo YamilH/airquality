@@ -80,6 +80,7 @@
 	height: calc(var(--size-cloud) * 0.5);
 	transform: translateX(23%);
 }
+
 .Balloon {
 	display: block;
 	position: absolute;
@@ -211,8 +212,6 @@
 	align-items: flex-start;
 	border-radius: 3%;
 	opacity: 0.75;
-	/* background-color: rgba(255, 255, 255, .15);  
-  backdrop-filter: blur(5px); */
 }
 
 .containerBase:before {
@@ -221,7 +220,6 @@
 }
 
 .Header {
-	/* background-color: green; */
 	height: 70px;
 	width: 100%;
 	padding: 4px;
@@ -230,22 +228,19 @@
 }
 
 .TextoTituloCiudad {
-	font-family: "Open Sans", sans-serif;
 	font-size: 26px;
 	font-weight: 500;
 	opacity: 1;
 	color: #000;
 }
+
 .TextoTimeStamp {
-	font-family: "Open Sans", sans-serif;
 	font-style: italic;
 	font-size: 11px;
 	font-weight: 300;
 }
 
 .GrupoPrincipal {
-	/* background-color: blue; */
-	/* background-color: #87f717; */
 	height: 100px;
 	width: 100%;
 	padding: 4px;
@@ -256,81 +251,31 @@
 	border: 1px solid gray;
 }
 
-.GrupoPrincipal1 {
+.Color1 {
 	background: url("./../../media/fondo1.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
-.GrupoPrincipal2 {
+.Color2 {
 	background: url("./../../media/fondo2.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
-.GrupoPrincipal3 {
+.Color3 {
 	background: url("./../../media/fondo3.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
-.GrupoPrincipal4 {
+.Color4 {
 	background: url("./../../media/fondo4.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
-.GrupoPrincipal5 {
+.Color5 {
 	background: url("./../../media/fondo5.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
-.GrupoPrincipal6 {
+.Color6 {
 	background: url("./../../media/fondo6.svg");
-	height: 100px;
-	width: 100%;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	align-items: center;
-	border: 1px solid gray;
 }
 
 .IconoCaritasContainer {
-	/* background-color: #fff9e3 ; */
-	/* width: 5%; */
 	justify-items: center;
 }
 .IconoCaritas {
@@ -338,32 +283,27 @@
 }
 
 .Aqi {
-	/* background-color: slateblue; */
 	flex-basis: 100px;
 	flex-direction: column;
 }
 .TextoAqi {
-	font-family: "Open Sans", sans-serif;
 	font-size: 50px;
 	font-weight: 600;
 	text-align: center;
 }
 .TextoUsAqi {
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	font-weight: 500;
 	text-align: center;
 }
 
 .TextoReferencia {
-	font-family: "Open Sans", sans-serif;
 	font-size: 20px;
 	font-weight: 400;
 	text-align: center;
 }
 
 .GrupoSecundario {
-	/* background-color: maroon; */
 	height: 70px;
 	width: 100%;
 	padding: 4px;
@@ -376,7 +316,6 @@
 }
 
 .Temperatura {
-	/* background-color: red; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -386,7 +325,6 @@
 }
 
 .Humedad {
-	/* background-color: orange; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -396,7 +334,6 @@
 }
 
 .Viento {
-	/* background-color: yellow; */
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -405,7 +342,6 @@
 	height: 40px;
 }
 .TextoGrupoSecundario {
-	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 }
