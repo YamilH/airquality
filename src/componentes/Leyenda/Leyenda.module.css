@@ -1,0 +1,64 @@
+.Container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 2%;
+  width: 100%;
+  background-color: transparent;
+  padding: 25px;
+  /* text-align: end; */
+  /* padding-right: 20px; */
+  gap:2px;
+  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); */
+  z-index:40;
+}
+
+.Leyenda1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: green;
+}
+
+.Leyenda2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: yellow;
+}
+
+.Leyenda3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: orange;
+}
+
+.Leyenda4 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: red;
+}
+
+.Leyenda5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: purple;
+}
+
+.Leyenda6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: maroon;
+}
+
+.Title {
+  font-size: 12px;
+}
+
+.Valor {
+  font-size:12px;
+}
