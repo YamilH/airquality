@@ -49,7 +49,7 @@ function App() {
 			":" +
 			(now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds())
 		);
-	}
+	};
 
 	const getCityData = () => {
 		try {
@@ -73,28 +73,28 @@ function App() {
 		}
 	};
 
-let iconocaritas;
-let referencia;
+	let iconocaritas;
+	let referencia;
 
-if (baseState.aqi >= 1 && baseState.aqi <= 50) {
-  iconocaritas = "carabueno.svg";
-  referencia = "Bueno";
-} else if (baseState.aqi >= 51 && baseState.aqi <= 100) {
-  iconocaritas = "caramoderado.svg";
-  referencia = "Moderado";
-} else if (baseState.aqi >= 101 && baseState.aqi <= 150) {
-  iconocaritas = "carainsalubreparagrupossensibles.svg";
-  referencia = "Insalubre para grupos sensibles";
-} else if (baseState.aqi >= 151 && baseState.aqi <= 200) {
-  iconocaritas = "carainsalubre.svg";
-  referencia = "Insalubre";
-} else if (baseState.aqi >= 201 && baseState.aqi <= 300) {
-  iconocaritas = "caramuyinsalubre.svg";
-  referencia = "Muy Insalubre";
-} else {
-  iconocaritas = "carapeligroso.svg";
-  referencia = "Peligroso";
-}
+	if (baseState.aqi >= 1 && baseState.aqi <= 50) {
+		iconocaritas = "carabueno.svg";
+		referencia = "Bueno";
+	} else if (baseState.aqi >= 51 && baseState.aqi <= 100) {
+		iconocaritas = "caramoderado.svg";
+		referencia = "Moderado";
+	} else if (baseState.aqi >= 101 && baseState.aqi <= 150) {
+		iconocaritas = "carainsalubreparagrupossensibles.svg";
+		referencia = "Insalubre para grupos sensibles";
+	} else if (baseState.aqi >= 151 && baseState.aqi <= 200) {
+		iconocaritas = "carainsalubre.svg";
+		referencia = "Insalubre";
+	} else if (baseState.aqi >= 201 && baseState.aqi <= 300) {
+		iconocaritas = "caramuyinsalubre.svg";
+		referencia = "Muy Insalubre";
+	} else {
+		iconocaritas = "carapeligroso.svg";
+		referencia = "Peligroso";
+	}
 
 	return (
 		<div className="App">
@@ -109,7 +109,9 @@ if (baseState.aqi >= 1 && baseState.aqi <= 50) {
 						iconocaritas={iconocaritas}
 						aqi={baseState.aqi}
 						referencia={referencia}
-						iconotemperatura={process.env.PUBLIC_URL+`${baseState.iconotemperatura}.png`}
+						iconotemperatura={
+							process.env.PUBLIC_URL + `${baseState.iconotemperatura}.png`
+						}
 						valortemperatura={baseState.temperature}
 						iconohumedad={iconohumedad}
 						valorhumedad={baseState.humidity}
